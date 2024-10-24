@@ -6,15 +6,10 @@ import axios from "axios";
 
 import { Search } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Home = () => {
   const [fetchedMeals, setFetchedMeals] = useState([]);
   const [ingredient, setIngredient] = useState("");
-
-  // useEffect(() => {
-  //   getMeals();
-  // }, []);
 
   const getMeals = async () => {
     try {
@@ -30,7 +25,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center py-2 px-12 md:px-20">
       <div className="mt-10 h-full flex flex-col items-center justify-center">
         <h1 className="font-bold text-3xl md:text-4xl text-amber-600">
           Pro Chef
@@ -62,14 +57,12 @@ const Home = () => {
 
       {fetchedMeals ? (
         fetchedMeals.map((meal) => (
-          <div key={meal.idMeal}>
-            <div className="grid md:grid-cols-3 grid-cols-none gap-4">
-              <div className="flex flex-col space-y-2 items-center justify-center rounded-lg shadow-md w-full p-2">
+          <div key={meal.idMeal} className="mt-8">
+            <div className="grid md:grid-cols-2 grid-cols-none gap-4">
+              <div className="flex flex-col space-y-2 items-center justify-center rounded-lg shadow-md p-2 gap-4">
                 <img
                   src={meal.strMealThumb}
                   alt="meal thumbnail"
-                  // height={200}
-                  // width={200}
                   className="rounded"
                 />
                 <h2>
@@ -95,34 +88,6 @@ const Home = () => {
           </h1>
         </div>
       )}
-
-      {/* {fetchedMeals.map((meal) => (
-        <div key={meal.idMeal}>
-          <div className="grid grid-cols-3 gap-4 mt-6">
-            <div className="flex flex-col space-y-2 items-center justify-center rounded-lg shadow-md w-full p-2">
-              <img
-                src={meal.strMealThumb}
-                alt="meal thumbnail"
-                height={200}
-                width={200}
-                className="rounded"
-              />
-              <h2>
-                {meal.strMeal.length > 20
-                  ? meal.strMeal.slice(0, 20) + "..."
-                  : meal.strMeal}
-              </h2>
-
-              <Link
-                href={`/recipe/${meal.idMeal}`}
-                className="btn bg-amber-600 text-white p-2 rounded-lg"
-              >
-                View Recipe
-              </Link>
-            </div>
-          </div>
-        </div>
-      ))} */}
     </div>
   );
 };

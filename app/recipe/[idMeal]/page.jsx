@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Image from "next/image";
 
 const RecipeDetails = ({ params }) => {
   const id = params.idMeal;
