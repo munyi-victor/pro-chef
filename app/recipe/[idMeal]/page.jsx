@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "next/image";
 
 const RecipeDetails = ({ params }) => {
   const id = params.idMeal;
@@ -10,7 +11,7 @@ const RecipeDetails = ({ params }) => {
 
   useEffect(() => {
     getMealDetails();
-  }, []);
+  }, [mealDetails]);
 
   const getMealDetails = async () => {
     const mealData = await axios.get(
@@ -21,7 +22,7 @@ const RecipeDetails = ({ params }) => {
     } else {
       return (
         <h1 className="font-semibold text-2xl">
-          Sorry, we couldn't find results for your search.
+          Sorry, we couldn&#39;t find results for your search.
         </h1>
       );
     }
@@ -51,6 +52,8 @@ const RecipeDetails = ({ params }) => {
           <img
             src={meal.strMealThumb}
             alt=""
+            height={100}
+            width={100}
             className="w-full md:h-[480px] h-[300px] rounded-lg"
           />
 

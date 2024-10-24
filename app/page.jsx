@@ -6,6 +6,7 @@ import axios from "axios";
 
 import { Search } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Home = () => {
   const [fetchedMeals, setFetchedMeals] = useState([]);
@@ -67,8 +68,8 @@ const Home = () => {
                 <img
                   src={meal.strMealThumb}
                   alt="meal thumbnail"
-                  height={200}
-                  width={200}
+                  // height={200}
+                  // width={200}
                   className="rounded"
                 />
                 <h2>
@@ -90,7 +91,7 @@ const Home = () => {
       ) : (
         <div className="mt-10">
           <h1 className="font-semibold text-xl text-neutral-600">
-            Sorry, we couldn't find results for your search.
+            Sorry, we couldn&#39;t find results for your search.
           </h1>
         </div>
       )}
