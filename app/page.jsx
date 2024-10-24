@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-2 px-12 md:px-20">
+    <div className="flex flex-col items-center justify-center py-2 px-8 md:px-20">
       <div className="mt-10 h-full flex flex-col items-center justify-center">
         <h1 className="font-bold text-3xl md:text-4xl text-amber-600">
           Pro Chef
